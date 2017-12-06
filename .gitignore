@@ -1,0 +1,4 @@
+app/app.config.js
+lib/node_modules
+node_modules
+lib/package-lock.json
