@@ -1,0 +1,19 @@
+{
+  "name": "codex",
+  "version": "1.0.0",
+  "description": "appication that sorts your movie collection by format",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmbw74/Codex.git"
+  },
+  "author": "Raymond J Medrano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmbw74/Codex/issues"
+  },
+  "homepage": "https://github.com/rmbw74/Codex#readme"
+}
