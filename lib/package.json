@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rmbw74/Codex/issues"
   },
-  "homepage": "https://github.com/rmbw74/Codex#readme"
+  "homepage": "https://github.com/rmbw74/Codex#readme",
+  "dependencies": {
+    "angular": "^1.6.7"
+  }
 }
