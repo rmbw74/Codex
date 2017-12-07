@@ -1,1 +1,1 @@
-var app = angular.module("Codex", ["ngRoute"])
+let app = angular.module("codex", ["ngRoute"])
