@@ -1,0 +1,9 @@
+<div ng-controller="apiSearchCtrl">
+    <input type="text" ng-keypress="finder($event)" ng-model="searchString" placeholder="Search">
+
+    <div ng-repeat="result in results">
+        <h4>{{result.title}}</h4>
+        <img src="https://image.tmdb.org/t/p/w154{{result.poster_path}}">
+        <button ng-click="addMovie($event)" id="addmovie!{{result.id}}">Add Movie</button>
+    </div>
+</div>
