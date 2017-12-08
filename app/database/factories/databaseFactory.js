@@ -1,5 +1,6 @@
-app
-.factory("dataBaseFactory", function (AuthFactory, $http){
+angular
+.module("codex")
+.factory("databaseFactory", function (AuthFactory, $http){
   const firebaseURL = "https://codex-7c4db.firebaseio.com/"
   return Object.create(null, {
     "cache": {
