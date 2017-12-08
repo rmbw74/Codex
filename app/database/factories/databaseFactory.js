@@ -12,7 +12,9 @@ angular
         return $http({
           "url": `${firebaseURL+areaInDb}/.json`,
           "method": "GET"
-        }).then(data => {
+        }).then(response => {
+          let data = response.data
+          console.log("This is the response from databaseFactory", data)
           this.cache = Object.keys(data)
             .map(key => {
               data[key].id = key

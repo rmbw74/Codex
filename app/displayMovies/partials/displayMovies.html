@@ -1,0 +1,11 @@
+<div ng-controller="displayMoviesCtrl">
+    <div ng-repeat="movie in userMovies">
+        <h4>{{movie.title}}</h4>
+        <a href="#">
+            <img src="{{movie.backdrop}}">
+        </a>
+        <button>pick format</button>
+        <button>delete me</button>
+
+    </div>
+</div>
