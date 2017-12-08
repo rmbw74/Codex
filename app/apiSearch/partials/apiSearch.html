@@ -4,6 +4,6 @@
     <div ng-repeat="result in results">
         <h4>{{result.title}}</h4>
         <img src="https://image.tmdb.org/t/p/w154{{result.poster_path}}">
-        <button ng-click="addMovie({{result.id}})" id="{{result.id}}">Add Movie</button>
+        <button ng-click="grabMovie($event)" id="{{result.id}}">Add Movie</button>
     </div>
 </div>
