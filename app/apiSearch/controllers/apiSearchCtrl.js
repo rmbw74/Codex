@@ -6,6 +6,7 @@ angular
         let currentmovie = []
         let newmovie = {}
         let currentUser = AuthFactory.getUser()
+        let basepath = "https://image.tmdb.org/t/p/w154"
 
         //this event listener sends the user search request to the api and returns the results
         $scope.finder = event => {
@@ -14,7 +15,7 @@ angular
                 $scope.results = []
                 apiFactory.TMDB_list($scope.searchString).then(data => {
                     $scope.results = data[3]
-                    //console.log("results", $scope.results)
+                    console.log("results", $scope.results)
                     //clear out the user search input if there is any
                     $scope.searchString = ""
                 })
@@ -22,9 +23,10 @@ angular
         }
         //this function grabs the movie that the user clicks on in the search partial
         $scope.grabMovie = event => {
-            let movieId = event.target.id
+            console.log(event)
+            let movieId = parseInt(event.target.id)
             currentmovie = $scope.results.filter(movie => {
-                    return movie.id == movieId
+                    return movie.id === movieId
             })
             console.log("This is what we have decided is the current movie",currentmovie)
             addToDatabase(currentmovie)
@@ -36,9 +38,10 @@ angular
                 "uuid": currentUser.uid,
                 "id": movie[0].id,
                 "formatid": 0,
-                "backdrop": movie[0].backdrop_path,
+                "backdrop": basepath + movie[0].poster_path,
                 "title": movie[0].title,
-                "overview": movie[0].overview
+                "overview": movie[0].overview,
+                "testArray": [1, 2, 3, 4]
             }
             //send object to database factory
             databaseFactory.add(newmovie, "movies")
