@@ -65,6 +65,16 @@ angular
             notify.log("Error while updating the article. Please try again.")
           })
       }
-    }
+    },
+    "single": {
+      value: function (key) {
+          return $http({
+              method: "GET",
+              url: `${firebaseURL}/movies/${key}/.json`
+          }).then(response => {
+              return response.data
+          })
+      }
+  },
   })
 })
