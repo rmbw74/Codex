@@ -1,8 +1,14 @@
 <ul ng-controller="NavCtrl">
     <li>
         <span ng-if="isAuthenticated()">
-            <a href="#!/apiSearch">Search</a>
-            <span ng-if="!isAuthenticated()"></span>
+            <a href="#!/apiSearch">Search For New Movies</a>
+        <span ng-if="!isAuthenticated()"></span>
+        </span>
+    </li>
+    <li>
+        <span ng-if="isAuthenticated()">
+            <a href="#!/welcome">Your Collection</a>
+        <span ng-if="!isAuthenticated()"></span>
         </span>
     </li>
     <li>

@@ -1,7 +1,7 @@
 <div ng-controller="displayMoviesCtrl">
     <div ng-repeat="movie in userMovies">
         <h4>{{movie.title}}</h4>
-        <a href="#">
+        <a a href="#!/movies/detail/{{movie.id}}">
             <img src="{{movie.backdrop}}">
         </a>
         <button>pick format</button>

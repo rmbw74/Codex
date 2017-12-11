@@ -1,6 +1,6 @@
 angular
 .module("codex")
-.controller("displayMoviesCtrl", function ($scope, $routeParams, databaseFactory, AuthFactory) {
+.controller("displayMoviesCtrl", function ($scope, $routeParams, databaseFactory, AuthFactory, $location) {
    let currentUser = AuthFactory.getUser()
 
    $scope.userId = currentUser.uid

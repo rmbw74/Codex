@@ -7,6 +7,7 @@ angular
         let newmovie = {}
         let currentUser = AuthFactory.getUser()
         let basepath = "https://image.tmdb.org/t/p/w154"
+        let detailpath = "https://image.tmdb.org/t/p/w300"
 
         //this event listener sends the user search request to the api and returns the results
         $scope.finder = event => {
@@ -37,11 +38,12 @@ angular
             newmovie = {
                 "uuid": currentUser.uid,
                 "id": movie[0].id,
-                "formatid": 0,
+                "format": ["none"],
                 "backdrop": basepath + movie[0].poster_path,
+                "poster": detailpath + movie[0].poster_path,
                 "title": movie[0].title,
                 "overview": movie[0].overview,
-                "testArray": [1, 2, 3, 4]
+                "dateAdded":Date.now()
             }
             //send object to database factory
             databaseFactory.add(newmovie, "movies")
