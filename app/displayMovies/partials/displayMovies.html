@@ -1,11 +1,20 @@
 <div ng-controller="displayMoviesCtrl">
-    <div ng-repeat="movie in userMovies">
+    <div>
+        <input type="text" ng-model="query" placeholder="Search collection" />
+    </div>
+    <div ng-repeat="movie in userMovies | filter: query as results">
         <h4>{{movie.title}}</h4>
         <a a href="#!/movies/detail/{{movie.id}}">
             <img src="{{movie.backdrop}}">
         </a>
-        <button>pick format</button>
-        <button>delete me</button>
+        <p>Formats:</p>
+        <div ng-repeat="format in movie.format">
+            <div>{{format}}</div>
+        </div>
 
+    </div>
+    <div ng-if="results.length === 0">
+        <br>
+        <strong>Sorry my young Padawan, These are not the results you are looking for!</strong>
     </div>
 </div>
