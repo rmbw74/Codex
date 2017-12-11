@@ -1,5 +1,11 @@
 <h1>{{movie.title}}</h1>
-<img src="{{movie.backdrop}}">
+<img src="{{movie.poster}}">
 <p>{{movie.overview}}</p>
-<button>delete me</button>
-<button>format me</button>
+<p>You added this movie to your collection on {{ movie.dateAdded | date:"fullDate"}}</p>
+<p>You currently own this movie in the following formats:</p>
+<ul ng-repeat="format in currentMovieFormats">
+    <li>{{format}}</li>  <button ng-click="removeformat({{format}})">X</button>
+</ul>
+<select ng-model="selectedFormat" ng-options="format.name for format in formats">
+    </select>
+<button ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>

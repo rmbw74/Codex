@@ -53,11 +53,11 @@ angular
       }
     },
     "replace": {
-      value: function (data, id, areaInDb, toChange) {
+      value: function (data, key) {
         return AuthFactory.getUser().getIdToken(true)
           .then(idToken => {
             return $http({
-              "url": `${firebaseURL +areaInDb}/${id}/${toChange}.json?auth=${idToken}`,
+              "url": `${firebaseURL}/movies/${key}/.json?auth=${idToken}`,
               "method": "PUT",
               "data": data
             })
