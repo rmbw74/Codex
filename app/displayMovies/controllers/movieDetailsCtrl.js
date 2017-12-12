@@ -8,14 +8,14 @@ angular
         //grab all the available formats in the database
         databaseFactory.all("formats").then(response => {
             $scope.formats = response
-            console.log("formats are",response)
+            //console.log("formats are",response)
         })
         //grab the details for the movie we have clicked on
         databaseFactory.single($routeParams.movieId).then(movie => {
             $scope.movie = movie
             $scope.currentMovieFormats = $scope.movie.format
-            console.log(currentMovieFormats)
-            console.log(movie)
+            //console.log(currentMovieFormats)
+            //console.log(movie)
         })
         //this function is a temporary one to add formats to firebase
         let createformats = () => {
@@ -33,7 +33,7 @@ angular
                 databaseFactory.replace($scope.movie,$routeParams.movieId)
             }else {
                 $scope.movie.format.push(selectedFormat)
-                console.log("We add format", $scope.movie)
+                //console.log("We add format", $scope.movie)
                 databaseFactory.replace($scope.movie,$routeParams.movieId)
 
             }

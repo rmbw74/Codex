@@ -16,7 +16,7 @@ angular
                 $scope.results = []
                 apiFactory.TMDB_list($scope.searchString).then(data => {
                     $scope.results = data[3]
-                    console.log("results", $scope.results)
+                    //console.log("results", $scope.results)
                     //clear out the user search input if there is any
                     $scope.searchString = ""
                 })
@@ -24,7 +24,7 @@ angular
         }
         //this function grabs the movie that the user clicks on in the search partial
         $scope.grabMovie = event => {
-            console.log(event)
+            //console.log(event)
             let movieId = parseInt(event.target.id)
             currentmovie = $scope.results.filter(movie => {
                     return movie.id === movieId

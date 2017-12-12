@@ -1,0 +1,21 @@
+<div ng-controller="filterMoviesCtrl">
+    Yo This is the {{currentFilter}} filter
+    <div>
+        <span ng-include="'app/filterMovies/partials/filterMovies.html'">
+    </div>
+    </li>
+    <div>
+        <input type="text" ng-model="query" placeholder="Search format" />
+    </div>
+    <div ng-repeat="movie in userMoviesUnfiltered | filter: query as results">
+        <h4>{{movie.title}}</h4>
+        <a href="#!/movies/detail/{{movie.id}}">
+            <img src="{{movie.backdrop}}">
+        </a>
+    </div>
+
+    <div ng-if="results.length === 0">
+        <br>
+        <strong>Sorry my young Padawan, you don't have that on {{currentFilter}}!</strong>
+    </div>
+</div>
