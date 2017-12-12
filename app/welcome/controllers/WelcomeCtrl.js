@@ -10,7 +10,7 @@ $scope.checkformovies = () => {
     usermovies = response.filter(movie => {
       return movie.uuid === currentuserid
     })
-    console.log("this is the response in checkformovies",usermovies)
+    //console.log("this is the response in checkformovies",usermovies)
     if (usermovies.length > 0){
       $scope.hasMovies = true
     }

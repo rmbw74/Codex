@@ -14,7 +14,7 @@ angular
           "method": "GET"
         }).then(response => {
           let data = response.data
-          console.log("This is the response from databaseFactory", data)
+          //console.log("This is the response from databaseFactory", data)
           this.cache = Object.keys(data)
             .map(key => {
               data[key].id = key
