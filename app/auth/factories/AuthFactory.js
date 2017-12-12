@@ -1,14 +1,19 @@
 angular.module("codex")
-.factory("AuthFactory", function ($http, $timeout, $location) {
+.factory("AuthFactory", function ($http, $timeout, $location, $route) {
     let currentUserData = null
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             currentUserData = user
             console.log("User is authenticated")
-            $timeout(function () {
-                $location.url("/welcome")
-            }, 100);
+
+            if($location.url() !== "/welcome"){
+                $timeout(function () {
+                    $location.url("/welcome")
+                }, 100);
+            }else {
+                $route.reload()
+            }
 
         } else {
             currentUserData = null
