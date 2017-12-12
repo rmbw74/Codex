@@ -1,0 +1,16 @@
+<div ng-controller="reportDataCtrl">
+    <h5>
+        Here is the report for your collection
+    </h5>
+ <ul id="report">
+    <li>total movies = {{TotalMovies}} </li>
+    <li>total DVD = {{TotalDVD}} </li>
+    <li>total Blu-Ray = {{TotalBluRay}} </li>
+    <li>total Digital = {{TotalDigital}} </li>
+    <li>total 4k = {{Total4K}} </li>
+ </ul>
+ <div ng-repeat="movie in userMovies">
+     {{movie.title}}
+ </div>
+
+</div>

@@ -76,5 +76,13 @@ angular
           })
       }
   },
+  "userData":{
+    value: function (currentUser) {
+      let userMovies = this.cache.filter(movie => {
+        return movie.uuid === currentUser
+      })
+      return userMovies
+    }
+  }
   })
 })

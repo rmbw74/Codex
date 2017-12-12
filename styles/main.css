@@ -4,3 +4,6 @@ ul {
 li {
     display: inline;
 }
+#report li {
+    display: block;
+}

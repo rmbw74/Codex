@@ -13,6 +13,12 @@
     </li>
     <li>
         <span ng-if="isAuthenticated()">
+            <a href="#!/reports">Report</a>
+        <span ng-if="!isAuthenticated()"></span>
+        </span>
+    </li>
+    <li>
+        <span ng-if="isAuthenticated()">
             <a href="#" ng-click="logout()">Logout</a>
         </span>
         <span ng-if="!isAuthenticated()"></span>
