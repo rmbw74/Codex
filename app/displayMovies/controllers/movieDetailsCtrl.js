@@ -1,6 +1,6 @@
 angular
     .module("codex")
-    .controller("movieDetailsCtrl", function ($scope, $routeParams, databaseFactory, $location) {
+    .controller("movieDetailsCtrl", function ($scope, $routeParams, databaseFactory, $location,$timeout) {
         $scope.movie = {}
         $scope.formats = {}
         $scope.currentMovieFormats = []
@@ -43,15 +43,15 @@ angular
         $scope.removeMovie = () => {
             //call database remove function pass it the movieId
             databaseFactory.remove($routeParams.movieId,"movies")
-            //send the user back to the welcome screen
-            $location.url("/welcome")
+            //send the user back to the welcome
+            $timeout(function () {
+                $location.url("/welcome")
+            }, 200)
+            //$location.url("/welcome")
 
         }
 
     })
-
-
-
 
 
 
