@@ -1,6 +1,6 @@
 angular
     .module("codex")
-    .controller("movieDetailsCtrl", function ($scope, $routeParams, databaseFactory, $location) {
+    .controller("movieDetailsCtrl", function ($scope, $routeParams, databaseFactory, $location,$timeout) {
         $scope.movie = {}
         $scope.formats = {}
         $scope.currentMovieFormats = []
@@ -37,13 +37,21 @@ angular
                 databaseFactory.replace($scope.movie,$routeParams.movieId)
 
             }
-
+        }
+        //this function is called when the user clicks on a movie and will delete the movie from the DB
+        //and return the user to the welcome screen
+        $scope.removeMovie = () => {
+            //call database remove function pass it the movieId
+            databaseFactory.remove($routeParams.movieId,"movies")
+            //send the user back to the welcome
+            $timeout(function () {
+                $location.url("/welcome")
+            }, 200)
+            //$location.url("/welcome")
 
         }
+
     })
-
-
-
 
 
 
