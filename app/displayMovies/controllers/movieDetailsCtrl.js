@@ -37,9 +37,12 @@ angular
                 databaseFactory.replace($scope.movie,$routeParams.movieId)
 
             }
-
-
         }
+        //this function is called when the user clicks on a movie and will delete the movie from the DB
+        $scope.removeMovie = () => {
+            databaseFactory.remove($routeParams.movieId,"movies")
+        }
+
     })
 
 

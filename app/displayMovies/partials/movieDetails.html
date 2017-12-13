@@ -13,7 +13,7 @@
     <select ng-model="selectedFormat" ng-options="format.name for format in formats" ng-init="DVD">
     </select>
     <button ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
-    <button ng-click="removeMovie(movie.id)">Delete Movie</button>
+    <button ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
 
 
 
