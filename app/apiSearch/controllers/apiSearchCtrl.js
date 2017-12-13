@@ -1,5 +1,5 @@
 angular
-    .module("codex")
+.module("codex")
     .controller("apiSearchCtrl", function (apiFactory, $scope, $routeParams, databaseFactory, AuthFactory) {
         $scope.results = []
         $scope.searchString = ""
