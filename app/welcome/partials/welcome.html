@@ -1,12 +1,11 @@
 <div ng-controller="WelcomeCtrl" ng-cloak>
 
-    <h1>{{email}} {{welcome}}</h1>
     <div ng-if="hasMovies === true">
 
         <div ng-include="'app/displayMovies/partials/displayMovies.html'"></div>
 
     </div>
     <div ng-if="hasMovies === false">
-        <h3>Doesn't look like you have any movies in your collection, click search to add some movies!</h3>
+        <h3>Hey {{ email }} it doesn't look like you have any movies in your collection, click search to add some movies!</h3>
     </div>
 </div>
