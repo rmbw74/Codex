@@ -13,14 +13,15 @@ angular
         let data = []
         const chart = document.getElementById("PieChart")
 
+        //this function will calculate all data to be diplayed by the chart
         chartData = function (totalMovies, DVD, BluRay, Digital, FourK) {
             let dataArray = []
-            let percentDVD = ((DVD/totalMovies)*100)
-            let percentBluRay = ((BluRay/totalMovies)*100)
-            let percentDigital = ((Digital/totalMovies)*100)
-            let percent4k = ((FourK/totalMovies)*100)
+            let percentDVD = Math.floor((DVD/totalMovies)*100)
+            let percentBluRay = Math.floor((BluRay/totalMovies)*100)+1
+            let percentDigital = Math.floor((Digital/totalMovies)*100)
+            let percent4k = Math.floor((FourK/totalMovies)*100)
                 dataArray.push(percentDVD, percentBluRay, percentDigital, percent4k)
-            console.log(dataArray)
+            //console.log(dataArray)
             return dataArray
         }
         //grab all the movies for the user and count how many of each format they have.
