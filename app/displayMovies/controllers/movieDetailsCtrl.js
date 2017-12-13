@@ -46,8 +46,7 @@ angular
             //send the user back to the welcome
             $timeout(function () {
                 $location.url("/welcome")
-            }, 200)
-            //$location.url("/welcome")
+            }, 500)
 
         }
 
