@@ -1,36 +1,39 @@
 <nav ng-controller="NavCtrl" class="navbar navbar-expand-lg navbar-light" id="mainNavBar">
-    <ul class="mr-auto">
-        <span ng-if=isAuthenticated()>
-            <a class="navbar-brand" href="#!/welcome">Codex</a>
-            <span ng-if="!isAuthenticated()"></span>
-        </span>
-        <li>
-            <span ng-if="isAuthenticated()">
-                <a href="#!/apiSearch" class="btn btn-sm btn-primary">Add Movie</a>
-            <span ng-if="!isAuthenticated()"></span>
-            </span>
-        </li>
-        <li>
-            <span ng-if="isAuthenticated()">
-                <a href="#!/welcome" class="btn btn-sm btn-primary">View Collection</a>
-            <span ng-if="!isAuthenticated()"></span>
-            </span>
-        </li>
-        <li>
-            <span ng-if="isAuthenticated()">
-                <a href="#!/reports"class="btn btn-sm btn-primary">Report</a>
-            <span ng-if="!isAuthenticated()"></span>
-            </span>
-        </li>
-    </ul>
-    <ul class="navbar-nav">
+    <div class="container-fluid">
 
-        <li>
-            <span ng-if="isAuthenticated()">
-                <a href="#" ng-click="logout()"class="btn btn-sm btn-danger">Logout <span>{{ email }}</span></a>
+        <ul class="mr-auto">
+            <span ng-if=isAuthenticated()>
+                <a class="navbar-brand" href="#!/welcome">Codex</a>
+                <span ng-if="!isAuthenticated()"></span>
             </span>
-            <span ng-if="!isAuthenticated()"></span>
-        </li>
-    </ul>
+            <li>
+                <span ng-if="isAuthenticated()">
+                    <a href="#!/apiSearch" class="leftSideBtn btn btn-sm btn-primary">Add Movie</a>
+                <span ng-if="!isAuthenticated()"></span>
+                </span>
+            </li>
+            <li>
+                <span ng-if="isAuthenticated()">
+                    <a href="#!/welcome" class="leftSideBtn btn btn-sm btn-primary">View Collection</a>
+                <span ng-if="!isAuthenticated()"></span>
+                </span>
+            </li>
+            <li>
+                <span ng-if="isAuthenticated()">
+                    <a href="#!/reports"class="leftSideBtn btn btn-sm btn-primary">Report</a>
+                <span ng-if="!isAuthenticated()"></span>
+                </span>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li>
+                <span ng-if="isAuthenticated()">
+                    <span class="navbar-text">{{ email }}</span>
+                    <a id="logoffbtn"href="#" ng-click="logout()"class="btn btn-sm btn-danger">Logout</a>
+                </span>
+                <span ng-if="!isAuthenticated()"></span>
+            </li>
+        </ul>
+    </div>
 
 </nav>

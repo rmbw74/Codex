@@ -15,7 +15,8 @@ li {
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
     padding-top:15px;
-    height: 47px;
+    height: 0 auto;
+    width: 0 auto;
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
@@ -32,6 +33,7 @@ li {
 .authWelcome{
     color:whitesmoke;
     border-radius: .3rem;
+    box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.75);
 
     width: 500px;
     height: 500px;
@@ -87,4 +89,10 @@ li {
 }
 .displayCard{
     margin-left:9px;
+}
+.leftSideBtn {
+    width:150px;
+}
+.card-title{
+    font-size:.8em;
 }
