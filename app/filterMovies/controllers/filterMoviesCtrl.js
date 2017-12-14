@@ -5,8 +5,17 @@ angular
         $scope.currentFilter = $routeParams.filterId
         $scope.userId = currentUser.uid
         $scope.currentFilters = []
+        $scope.query = []
         $scope.userMoviesUnfiltered = []
         $scope.userMoviesFiltered = []
+        $scope.hasResults = null
+
+                if ($scope.query.length = 0){
+                    $scope.hasResults = false
+                }else {
+                    $scope.hasResults = true
+
+                }
 
         //this function grabs all formats from the database and builds a filter bar for use in the app
         $scope.buildFilterBar = () => databaseFactory.all("formats").then(response => {

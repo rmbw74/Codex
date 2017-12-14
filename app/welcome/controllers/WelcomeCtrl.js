@@ -1,6 +1,6 @@
 app.controller("WelcomeCtrl", function($scope, AuthFactory, databaseFactory) {
   $scope.currentUser = AuthFactory.getUser()
-  $scope.hasMovies = false
+  $scope.hasMovies = null
   $scope.email = $scope.currentUser.email
   $scope.welcome = "you logged in! Awesome!"
 
@@ -13,6 +13,9 @@ $scope.checkformovies = () => {
     //console.log("this is the response in checkformovies",usermovies)
     if (usermovies.length > 0){
       $scope.hasMovies = true
+    } else {
+
+      $scope.hasMovies = false
     }
   })
 }

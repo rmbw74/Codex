@@ -1,12 +1,12 @@
 angular
 .module("codex")
-    .controller("apiSearchCtrl", function (apiFactory, $scope, $routeParams, databaseFactory, AuthFactory) {
+    .controller("apiSearchCtrl", function (apiFactory, $scope, $routeParams, databaseFactory, AuthFactory,) {
         $scope.results = []
         $scope.searchString = ""
         let currentmovie = []
         let newmovie = {}
         let currentUser = AuthFactory.getUser()
-        let basepath = "https://image.tmdb.org/t/p/w154"
+        let basepath = "https://image.tmdb.org/t/p/w300"
         let detailpath = "https://image.tmdb.org/t/p/w300"
 
         //this event listener sends the user search request to the api and returns the results

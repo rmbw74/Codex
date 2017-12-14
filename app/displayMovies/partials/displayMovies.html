@@ -1,20 +1,44 @@
-<div ng-controller="displayMoviesCtrl" ng-cloak>
-        <div><span ng-include="'app/filterMovies/partials/filterMovies.html'"></div></li>
+<div class="container" ng-controller="displayMoviesCtrl" ng-cloak>
+    <div>
+        <span ng-include="'app/filterMovies/partials/filterMovies.html'">
+    </div>
+
+
     <div>
         <input type="text" ng-model="query" placeholder="Search collection" />
     </div>
-    <div ng-repeat="movie in userMovies | filter: query as results">
-        <h4>{{movie.title}}</h4>
-        <a a href="#!/movies/detail/{{movie.id}}">
-            <img src="{{movie.backdrop}}">
-        </a>
-        <p>Formats:</p>
-        <div ng-repeat="format in movie.format">
-            <div>{{format}}</div>
-        </div>
 
+    <div class="container">
+        <div class="row">
+
+            <div ng-repeat="movie in userMovies | filter: query">
+                <!--      <h4>{{movie.title}}</h4>
+                <a a href="#!/movies/detail/{{movie.id}}">
+                    <img ng-src="{{movie.backdrop}}">
+                </a>
+                <p>Formats:</p>
+                <div ng-repeat="format in movie.format">
+                    <div>{{format}}</div>
+                </div> -->
+
+                <div class="card displayCard" style="width: 11rem;">
+                    <img class="card-img-top" src="{{movie.backdrop}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title">{{movie.title}}</h6>
+                        <a href="#!/movies/detail/{{movie.id}}" class="btn btn-primary btn-sm">Details</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="formatDiv" ng-repeat="format in movie.format">
+                            <span class="cardFormat">{{ format }}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
-    <div ng-if="results.length === 0">
+    <div ng-if="hasResults  === false">
         <br>
         <strong>Sorry my young Padawan, These are not the results you are looking for!</strong>
     </div>
