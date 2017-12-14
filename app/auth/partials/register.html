@@ -1,10 +1,9 @@
-<div>
-    <input type="email" placeholder="Email address" ng-model="auth.email" autofocus>
-    <input type="password" placeholder="Password" ng-model="auth.password">
-    <button ng-click="registerUser(auth)">Register</button>
-    <button ng-click="loginUser(auth)">Login</button>
+<div class="container text-center authWelcome">
 
     <h1>Welcome to Codex</h1>
-    <h2>If you're new here, please type in your username and email and hit that register button</h2>
-    <h2>Otherwise - go ahead and login with your email and password</h2>
+
+    <input class="form-control"type="email" placeholder="Email address" ng-model="auth.email" autofocus><br>
+    <input class="form-control"type="password" placeholder="Password" ng-model="auth.password"><br>
+    <button class="btn authbtn btn-lg"ng-click="loginUser(auth)">Login</button><br>
+    <button class="btn authbtn btn-lg"ng-click="registerUser(auth)">Register</button>
 </div>

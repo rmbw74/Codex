@@ -7,3 +7,84 @@ li {
 #report li {
     display: block;
 }
+#mainNavBar {
+    background-color: #4f91f3;
+}
+#filterBar {
+    background-color: rgba(57, 57, 58, 0.205);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding-top:15px;
+    height: 47px;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+.noMoviesMessage {
+    background-color:#4f91f3;
+    color:whitesmoke;
+    margin-top:40px;
+    padding: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 90%;
+}
+.authWelcome{
+    color:whitesmoke;
+    border-radius: .3rem;
+
+    width: 500px;
+    height: 500px;
+    background-color: #4f91f3;
+
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+}
+.authbtn {
+    margin-bottom:10px;
+    width: 200px;
+}
+#chartContainer {
+    width: 400px;
+    height: 400px;
+}
+.reportContainer {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #4f91f3;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    color:whitesmoke;
+
+}
+#reportTitle {
+    text-align:center;
+    width: 100%;
+    margin: 0 auto;
+}
+.filterbtn {
+    width: 150px;
+}
+#formatSelect {
+    width: 100px;
+    float:left;
+}
+.cardFormat{
+    font-size: 10px;
+}
+.formatDiv {
+    display:inline-flex;
+    margin-left: 2px;
+    padding: 1px;
+    border: 1px solid black;
+}
+.displayCard{
+    margin-left:9px;
+}

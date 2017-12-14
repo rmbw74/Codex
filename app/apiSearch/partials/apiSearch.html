@@ -1,9 +1,19 @@
-<div ng-controller="apiSearchCtrl" ng-cloak>
+<div class="container"ng-controller="apiSearchCtrl">
     <input type="text" ng-keypress="finder($event)" ng-model="searchString" placeholder="Search">
+<div class="container-fluid">
+    <div class="row">
+        <div ng-repeat="result in results">
+            <div class="col-sm">
 
-    <div ng-repeat="result in results">
-        <h4>{{result.title}}</h4>
-        <img src="https://image.tmdb.org/t/p/w154{{result.poster_path}}">
-        <button ng-click="grabMovie($event)" id="{{result.id}}">Add Movie</button>
+                <div class="card apiSeachCard">
+                    <span class="apiCardTitle">{{result.title}}</span>
+                    <img ng-src="https://image.tmdb.org/t/p/w300{{result.poster_path}}" alt="Sorry No Image Found">
+                    <button class="btn btn-sm btn-success"ng-click="grabMovie($event)" id="{{result.id}}">Add Movie</button>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+</div>
 </div>

@@ -1,8 +1,8 @@
-<div ng-controller="movieDetailsCtrl" ng-cloak>
+<div class="container"ng-controller="movieDetailsCtrl">
 
 
-    <h1>{{movie.title}}</h1>
-    <img src="{{movie.poster}}">
+    <h1 id="detailTitle">{{movie.title}}</h1>
+    <img id="detailImg" src="{{movie.poster}}">
     <p>{{movie.overview}}</p>
     <p>You added this movie to your collection on {{ movie.dateAdded | date:"fullDate"}}</p>
     <p>You currently own this movie in the following formats:</p>
@@ -10,12 +10,8 @@
         <li>{{format}}</li>
        <!--  <button ng-click="removeformat({{format}})">X</button> -->
     </ul>
-    <select ng-model="selectedFormat" ng-options="format.name for format in formats" ng-init="DVD">
+    <select id="formatSelect"class="form-control" ng-model="selectedFormat" ng-options="format.name for format in formats" ng-init="DVD">
     </select>
-    <button ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
-    <button ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
-
-
-
-
+    <button id ="addFormatbtn"class="btn btn btn-lg btn-info" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
+    <button id ="deleteMoviebtn"class="btn btn-lg btn-danger"ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
 </div>
