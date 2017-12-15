@@ -1,4 +1,4 @@
-<div class="container" ng-controller="filterMoviesCtrl">
+<div class="container" ng-controller="filterMoviesCtrl" ng-cloak>
     <div ng-click="showHide()">
         <span ng-include="'app/filterMovies/partials/filterMovies.html'">
     </div>
@@ -7,14 +7,13 @@
         <input input id="searchBarInput" type="text" ng-model="query" placeholder="Search {{ currentFilter }}"/>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div ng-repeat="movie in userMoviesUnfiltered | filter: query as results">
-                <div class="card" style="width: 11rem;">
+    <div class="container d-flex">
+        <div class="row card-deck">
+            <div class="cardWrapper"ng-repeat="movie in userMoviesUnfiltered | filter: query | orderBy: movie.dateAdded :true">
+                <div class="card displayCard" style="width:12rem;">
                     <img class="card-img-top" src="{{movie.backdrop}}" alt="Card image cap">
                     <div class="card-body">
-                        <h4 class="card-title">{{movie.title}}</h4>
-                        <p class="card-text"></p>
+                        <h6 class="card-title text-truncate">{{movie.title}}</h6>
                         <a href="#!/movies/detail/{{movie.id}}" class="btn btn-primary btn-sm">Details</a>
                     </div>
                     <div class="card-body">

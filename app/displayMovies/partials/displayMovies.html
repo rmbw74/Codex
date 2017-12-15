@@ -8,11 +8,11 @@
         <input id="searchBarInput" type="text" ng-model="query" placeholder="Search Collection" />
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div ng-repeat="movie in userMovies | filter: query | orderBy: movie.dateAdded :true">
+    <div class="container d-flex">
+        <div class="row card-deck">
+            <div class="cardWrapper"ng-repeat="movie in userMovies | filter: query | orderBy: movie.dateAdded :true">
 
-                <div class="card displayCard" style="width: 11rem;">
+                <div class="card displayCard" style="width:12rem;">
                     <img class="card-img-top" src="{{movie.backdrop}}" alt="Card image cap">
                     <div class="card-body">
                         <h6 class="card-title text-truncate">{{movie.title}}</h6>

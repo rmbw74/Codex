@@ -95,6 +95,14 @@ ul.ulFilter{
     width: 100px;
     float:left;
 }
+/********* Card CSS ***********/
+.card{
+    border: 1px solid black;
+    box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.75);
+}
+.cardWrapper{
+    margin-top:5px;
+}
 .cardFormat{
     font-size: 10px;
 }
@@ -105,13 +113,17 @@ ul.ulFilter{
     border: 1px solid black;
 }
 .displayCard{
-    margin-left:9px;
+    margin-left:0;
 }
 .leftSideBtn {
     width:150px;
 }
 .card-title{
     font-size:.7em;
+}
+.card-body{
+    padding: 0;
+    margin-bottom:5px;
 }
 
 /********* SearchBar CSS ***********/
