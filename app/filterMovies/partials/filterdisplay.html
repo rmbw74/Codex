@@ -1,20 +1,15 @@
 <div class="container" ng-controller="filterMoviesCtrl">
-    <div>
+    <div ng-click="showHide()">
         <span ng-include="'app/filterMovies/partials/filterMovies.html'">
     </div>
 
-    <div>
-        <input type="text" ng-model="query" placeholder="Search format" />
+    <div ng-hide="isHidden" class="container animate-show-hide" id="searchBarContainer">
+        <input input id="searchBarInput" type="text" ng-model="query" placeholder="Search {{ currentFilter }}"/>
     </div>
 
     <div class="container">
         <div class="row">
             <div ng-repeat="movie in userMoviesUnfiltered | filter: query as results">
-                <!--  <h4>{{movie.title}}</h4>
-                <a href="#!/movies/detail/{{movie.id}}">
-                    <img src="{{movie.backdrop}}">
-                </a> -->
-
                 <div class="card" style="width: 11rem;">
                     <img class="card-img-top" src="{{movie.backdrop}}" alt="Card image cap">
                     <div class="card-body">
