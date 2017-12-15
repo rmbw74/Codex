@@ -8,7 +8,6 @@
     <p>You currently own this movie in the following formats:</p>
     <ul ng-repeat="format in currentMovieFormats">
         <li>{{format}}</li>
-       <!--  <button ng-click="removeformat({{format}})">X</button> -->
     </ul>
     <select id="formatSelect"class="form-control" ng-model="selectedFormat" ng-options="format.name for format in formats" ng-init="DVD">
     </select>

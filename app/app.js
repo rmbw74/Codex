@@ -1,1 +1,1 @@
-let app = angular.module("codex", ["ngRoute"])
+let app = angular.module("codex", ["ngRoute","ngAnimate"])

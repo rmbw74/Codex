@@ -1,26 +1,40 @@
+/********** Common CSS ***********/
 ul {
     list-style: none;
 }
 li {
     display: inline;
 }
-#report li {
-    display: block;
-}
-#mainNavBar {
-    background-color: #4f91f3;
-}
-#filterBar {
-    background-color: rgba(57, 57, 58, 0.205);
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-    padding-top:15px;
-    height: 0 auto;
-    width: 0 auto;
-}
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
+body {
+    background-color: rgb(230, 227, 227);
+}
+/*********** NavBar CSS **********/
+#mainNavBar {
+    background-color: #4f91f3;
+}
+
+/********** Filter Bar CSS **********/
+#filterBar {
+    background-color: rgba(57, 57, 58, 0.205);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    padding-top:5px;
+}
+ul.ulFilter{
+    padding-left: 0;
+    margin-bottom:5px;
+}
+.filterBtnContainer {
+    padding-left:10px;
+    padding-right:10px;
+}
+.filterbtn {
+    width: 170px;
+}
+/********** Welcome Partial CSS **********/
 .noMoviesMessage {
     background-color:#4f91f3;
     color:whitesmoke;
@@ -30,6 +44,7 @@ li {
     text-align: center;
     width: 90%;
 }
+/********** Auth/Login Partial CSS **********/
 .authWelcome{
     color:whitesmoke;
     border-radius: .3rem;
@@ -53,6 +68,8 @@ li {
     margin-bottom:10px;
     width: 200px;
 }
+
+/********** Report Partial CSS **********/
 #chartContainer {
     width: 400px;
     height: 400px;
@@ -71,8 +88,8 @@ li {
     width: 100%;
     margin: 0 auto;
 }
-.filterbtn {
-    width: 150px;
+#report li {
+    display: block;
 }
 #formatSelect {
     width: 100px;
@@ -94,5 +111,32 @@ li {
     width:150px;
 }
 .card-title{
-    font-size:.8em;
+    font-size:.7em;
+}
+
+/********* SearchBar CSS ***********/
+#searchBarContainer {
+    background-color: #4f91f3;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    width: 85%;
+    box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 5px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+#searchBarInput {
+    display:block;
+    margin:auto;
+}
+#searchBarInput::placeholder{
+    text-align: center;
+}
+.animate-show-hide.ng-hide {
+    opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+    transition: all linear 0.5s;
 }
