@@ -1,16 +1,42 @@
-<div class="container"ng-controller="movieDetailsCtrl">
+<div class="container" ng-controller="movieDetailsCtrl">
+    <div class="container">
+        <div class="col-lg-12">
+            <h1 id="detailTitle">{{movie.title}}</h1>
+        </div>
+        <div class="container detailTop">
+            <div class="row">
+                <div class="visWrap col-lg-4">
+                    <img id="detailImg" src="{{movie.poster}}">
+                </div>
+                <div class="movieOverview col-lg-8">
+                    <p>{{movie.overview}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <p class="detailDate">You added this movie to your collection on {{ movie.dateAdded | date:"fullDate"}}</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="formatListHead">You currently own this movie in the following formats:</p>
+            <div class="row">
 
+                <ul ng-repeat="format in currentMovieFormats">
+                    <li class="col-lg-3 formatList">{{format}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
 
-    <h1 id="detailTitle">{{movie.title}}</h1>
-    <img id="detailImg" src="{{movie.poster}}">
-    <p>{{movie.overview}}</p>
-    <p>You added this movie to your collection on {{ movie.dateAdded | date:"fullDate"}}</p>
-    <p>You currently own this movie in the following formats:</p>
-    <ul ng-repeat="format in currentMovieFormats">
-        <li>{{format}}</li>
-    </ul>
-    <select id="formatSelect"class="form-control" ng-model="selectedFormat" ng-options="format.name for format in formats" ng-init="DVD">
-    </select>
-    <button id ="addFormatbtn"class="btn btn btn-lg btn-info" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
-    <button id ="deleteMoviebtn"class="btn btn-lg btn-danger"ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
+                <select id="formatSelect" class="form-control col-lg-4 visWrap" ng-model="selectedFormat" ng-options="format.name for format in formats"
+                    ng-init="DVD">
+                </select>
+                <button id="addFormatbtn" class="btn btn btn-lg btn-info col-lg-4 visWrap" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
+                <button id="deleteMoviebtn" class="btn btn-lg btn-danger col-lg-4 visWrap" ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
+            </div>
+
+        </div>
+    </div>
 </div>
