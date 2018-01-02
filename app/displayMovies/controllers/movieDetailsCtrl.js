@@ -37,6 +37,10 @@ angular
                 databaseFactory.replace($scope.movie,$routeParams.movieId)
 
             }
+        $scope.removeFormat = selectedFormat => {
+            let indexToRemove = $scope.currentMovieFormats.indexOf(selectedFormat)
+            console.log("indextoremove",indexToRemove)
+        }
         }
         //this function is called when the user clicks on a movie and will delete the movie from the DB
         //and return the user to the welcome screen
