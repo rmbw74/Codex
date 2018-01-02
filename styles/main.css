@@ -188,14 +188,27 @@ ul.ulFilter{
 #deleteMoviebtn {
     margin-bottom: 5px;
     margin-right:5px;
+    width:0px;
+    padding:5px;
 }
 #addFormatbtn {
     margin-bottom: 5px;
     margin-right:5px;
+    width:0px;
+    padding:5px;
 }
 #formatSelect {
-    height: 47.98px;
-    margin-right:3px;
+    height: 42.97px;
+    margin-right:5px;
+    width:0px;
+    padding:5px;
+
+}
+#removeFormatbtn {
+    margin-bottom: 5px;
+    margin-right:5px;
+    width:0px;
+    padding:5px;
 }
 /********API SEARCH PAGE CSS ***********/
 .emptyDiv {

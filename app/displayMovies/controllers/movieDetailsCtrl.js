@@ -27,20 +27,42 @@ angular
         //this will be commented out unless we need to add more formats
         //createformats()
         $scope.addFormatToMovie = selectedFormat => {
-            if($scope.currentMovieFormats[0] === "none"){
-                $scope.currentMovieFormats.push(selectedFormat)
-                $scope.currentMovieFormats.splice(0, 1)
-                databaseFactory.replace($scope.movie,$routeParams.movieId)
-            }else {
-                $scope.movie.format.push(selectedFormat)
-                //console.log("We add format", $scope.movie)
-                databaseFactory.replace($scope.movie,$routeParams.movieId)
+            //check to see if the current movie is already owned in a particular format (will return -1 if exists)
+            if ($scope.currentMovieFormats.indexOf(selectedFormat) < 0)
+            {
+                //if the current movie has not been formated, remove none then replace with new format
+                if($scope.currentMovieFormats[0] === "none"){
+                    $scope.currentMovieFormats.push(selectedFormat)
+                    $scope.currentMovieFormats.splice(0, 1)
+                    databaseFactory.replace($scope.movie,$routeParams.movieId)
+                }else {
+                    //if movie is already formatted, just add new format to array and then send movie to firebase.
+                    $scope.movie.format.push(selectedFormat)
+                    databaseFactory.replace($scope.movie,$routeParams.movieId)
 
+                }
+
+            }else{
+                alert("You aleady own the movie in this format, try again")
             }
-        $scope.removeFormat = selectedFormat => {
-            let indexToRemove = $scope.currentMovieFormats.indexOf(selectedFormat)
-            console.log("indextoremove",indexToRemove)
         }
+        //this function will remove a selected format when the user chooses a format a clicks the remove format button
+        $scope.removeFormat = selectedFormat => {
+            //find what index that the selected format is in the current movie
+            let indexToRemove = $scope.movie.format.indexOf(selectedFormat)
+            //if the format exists in the array than splice the format off the array and the array is > 0
+            if ($scope.movie.format.length > 0 && indexToRemove > -1){
+                $scope.movie.format.splice(indexToRemove,1)
+                //if all formats are removed from the film, push the "none" format back to the array
+                if ($scope.movie.format.length < 1){
+                    $scope.movie.format.push("none")
+                    //push the  movie back to firebase
+                    databaseFactory.replace($scope.movie, $routeParams.movieId)
+                //push the movie back to firebase
+                databaseFactory.replace($scope.movie, $routeParams.movieId)
+            }
+
+
         }
         //this function is called when the user clicks on a movie and will delete the movie from the DB
         //and return the user to the welcome screen

@@ -27,16 +27,15 @@
                 </ul>
             </div>
         </div>
-        <div class="container">
+        <div class="container buttonRow">
             <div class="row">
-
-                <select id="formatSelect" class="form-control col-lg-3 visWrap" ng-model="selectedFormat" ng-options="format.name for format in formats"
+                <select id="formatSelect" class="form-control col-sm-2 visWrap" ng-model="selectedFormat" ng-options="format.name for format in formats"
                     ng-init="DVD">
                 </select>
-                <button id="addFormatbtn" class="btn btn btn-lg btn-info col-lg-3 visWrap" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
-                <button id="deleteMoviebtn" class="btn btn-lg btn-danger col-lg-3 visWrap" ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
+                <button id="addFormatbtn" class="btn btn btn-lg btn-info col-sm-3 visWrap" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
+                <button id="removeFormatbtn" class="btn btn btn-lg btn-warning col-sm-3 visWrap" ng-click="removeFormat(selectedFormat.name)">Remove Format</button>
+                <button id="deleteMoviebtn" class="btn btn-lg btn-danger col-sm-3 visWrap" ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
             </div>
-
         </div>
     </div>
 </div>
