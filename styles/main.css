@@ -185,3 +185,34 @@ ul.ulFilter{
 .formatListHead {
     text-align: center;
 }
+/********API SEARCH PAGE CSS ***********/
+.emptyDiv {
+ width: 100%;
+ height: 920px;
+}
+.apiCardImage {
+    width: 100%;
+    height: 35vw;
+    object-fit: cover;
+}
+.addMoviebtn {
+    margin-top: 5px;
+    margin-left: 3px;
+}
+#apiSearchBar{
+    background-color: #4f91f3;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    width: 85%;
+    box-shadow: 6px 6px 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 5px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+#apiSearchBarInput {
+    display:block;
+    margin:auto;
+}
+#apiSearchBarInput::placeholder{
+    text-align: center;
+}

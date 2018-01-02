@@ -1,19 +1,25 @@
-<div class="container"ng-controller="apiSearchCtrl">
-    <input type="text" ng-keypress="finder($event)" ng-model="searchString" placeholder="Search">
-<div class="container-fluid">
-    <div class="row">
-        <div ng-repeat="result in results">
-            <div class="col-sm">
+<div class="container" ng-controller="apiSearchCtrl">
+    <div class="container" id="apiSearchBar">
+        <input id="apiSearchBarInput" type="text" ng-keypress="finder($event)" ng-model="searchString" placeholder="Search">
+    </div>
+    <div class=" card-deck container-d-flex">
+        <div class="row">
+            <div ng-repeat="result in results">
+                <div class="cardWrapper">
 
-                <div class="card apiSeachCard">
-                    <span class="apiCardTitle">{{result.title}}</span>
-                    <img ng-src="https://image.tmdb.org/t/p/w300{{result.poster_path}}" alt="Sorry No Image Found">
-                    <button class="btn btn-sm btn-success"ng-click="grabMovie($event)" id="{{result.id}}">Add Movie</button>
+                    <div class="card apiSeachCard" style="width: 16rem; height:auto;">
+                        <span class="apiCardTitle text-truncate">{{result.title}}</span>
+                        <img ng-if="result.poster_path" ng-src="https://image.tmdb.org/t/p/w300{{result.poster_path}}" alt="Sorry No Image Found"
+                            class="apiCardImage card-img-top">
+                        <img ng-if="!result.poster_path" ng-src="http://seelian.com.sg/zencart/images/pixel_trans.gif" class="apiCardImage card-img-top">
+                        <div class="card-body">
+                            <button class="addMoviebtn btn btn-lg btn-success" ng-click="grabMovie($event)" id="{{result.id}}">Add Movie</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
     </div>
-
-</div>
 </div>
