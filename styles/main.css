@@ -185,6 +185,18 @@ ul.ulFilter{
 .formatListHead {
     text-align: center;
 }
+#deleteMoviebtn {
+    margin-bottom: 5px;
+    margin-right:5px;
+}
+#addFormatbtn {
+    margin-bottom: 5px;
+    margin-right:5px;
+}
+#formatSelect {
+    height: 47.98px;
+    margin-right:3px;
+}
 /********API SEARCH PAGE CSS ***********/
 .emptyDiv {
  width: 100%;

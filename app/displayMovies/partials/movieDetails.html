@@ -22,7 +22,7 @@
             <p class="formatListHead">You currently own this movie in the following formats:</p>
             <div class="row">
 
-                <ul ng-repeat="format in currentMovieFormats">
+                <ul ng-repeat="format in currentMovieFormats | orderBy: format">
                     <li class="col-lg-3 formatList">{{format}}</li>
                 </ul>
             </div>
@@ -30,11 +30,11 @@
         <div class="container">
             <div class="row">
 
-                <select id="formatSelect" class="form-control col-lg-4 visWrap" ng-model="selectedFormat" ng-options="format.name for format in formats"
+                <select id="formatSelect" class="form-control col-lg-3 visWrap" ng-model="selectedFormat" ng-options="format.name for format in formats"
                     ng-init="DVD">
                 </select>
-                <button id="addFormatbtn" class="btn btn btn-lg btn-info col-lg-4 visWrap" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
-                <button id="deleteMoviebtn" class="btn btn-lg btn-danger col-lg-4 visWrap" ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
+                <button id="addFormatbtn" class="btn btn btn-lg btn-info col-lg-3 visWrap" ng-click="addFormatToMovie(selectedFormat.name)">Add Format</button>
+                <button id="deleteMoviebtn" class="btn btn-lg btn-danger col-lg-3 visWrap" ng-click="removeMovie($routeParams.movieId)">Delete Movie</button>
             </div>
 
         </div>
