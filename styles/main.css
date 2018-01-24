@@ -210,6 +210,10 @@ ul.ulFilter{
     width:0px;
     padding:5px;
 }
+.detailDateRow {
+    text-align:center;
+    
+}
 /********API SEARCH PAGE CSS ***********/
 .emptyDiv {
  width: 100%;
