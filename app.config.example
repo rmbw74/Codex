@@ -1,0 +1,59 @@
+app.constant("FIREBASE_CONFIG", {
+    apiKey: "<Your Firebase Api key here>",
+    authDomain: "<Your Firebase Config here>",
+    databaseURL: "Your Firebase Config here>",
+    projectId: "<Your Firebase Config here>",
+    storageBucket: "<Your Firebase Config here>",
+    messagingSenderId: "545121410789"
+})
+app.constant("TMDB_KEY", "<Your TMBD API Key here>")
+angular.module("codex").run(function (FIREBASE_CONFIG) {
+    firebase.initializeApp(FIREBASE_CONFIG)
+})
+
+let isAuth = AuthFactory => new Promise ((resolve, reject) => {
+    if (AuthFactory.isAuthenticated()){
+        console.log("User is authenticated, resolve route promise")
+        resolve()
+    } else {
+        console.log("User is not authenticated, reject route promise")
+        reject()
+    }
+})
+
+angular.module("codex").config(function ($routeProvider) {
+    /**
+     * Configure all Angular application routes here
+     */
+    $routeProvider
+        .when('/auth', {
+            templateUrl: "app/auth/partials/register.html",
+            controller: 'AuthCtrl'
+        })
+        .when('/welcome', {
+            templateUrl: "app/welcome/partials/welcome.html",
+            //controller: 'WelcomeCtrl',
+            resolve: { isAuth }
+        })
+        .when('/apiSearch', {
+            templateUrl: "app/apiSearch/partials/apiSearch.html",
+            controller: 'apiSearchCtrl',
+            resolve: { isAuth }
+        })
+        .when('/movies/detail/:movieId', {
+            templateUrl: "app/displayMovies/partials/movieDetails.html",
+            controller: 'movieDetailsCtrl',
+            resolve: { isAuth }
+        })
+        .when('/filter/:filterId', {
+            templateUrl: "app/filterMovies/partials/filterdisplay.html",
+            controller: 'filterMoviesCtrl',
+            resolve: { isAuth }
+        }).when('/reports/', {
+            templateUrl: "app/reporting/partials/reportDisplay.html",
+            //controller: 'reportDataCtrl',
+            resolve: { isAuth }
+        })
+        .otherwise('/auth')
+
+})
