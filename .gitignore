@@ -3,3 +3,4 @@ lib/node_modules
 node_modules
 lib/package-lock.json
 DS_Store
+.DS_Store
