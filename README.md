@@ -13,7 +13,7 @@ Front End Capstone NSS Cohort 22. Application for helping organize movie collect
 1. You will need to setup an account with firebase and request an API key from TMDB.ORG to use this app.
 1. Open the app.config.example file and observe the top section of the file
 
-'''
+```
    app.constant("FIREBASE_CONFIG", {
     apiKey: "<Your Firebase Api key here>",
     authDomain: "<Your Firebase Config here>",
@@ -26,7 +26,7 @@ app.constant("TMDB_KEY", "<Your TMBD API Key here>")
 angular.module("codex").run(function (FIREBASE_CONFIG) {
     firebase.initializeApp(FIREBASE_CONFIG)
 })
-'''
+```
 1. You will need to replace all information in the <  >'s with the appropriate information
 1. Once configured, save the file as app.config.js and save it to the /Codex/App folder
 
