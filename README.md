@@ -82,7 +82,7 @@ to use codex, you can try out the deployed app at www.mycodexapp.com
 1. Below the main dashboard you will see a grey filter bar.
 1. pressing any of the four buttons will filter only the selected format, to return to all click on "View Collection"
 
-#Using the search bar
+# Using the search bar
 1. Clicking on any of the light grey space surrounding the filter buttons will cause a search bar to fade in.
 1. Click on the search field to place the cursor in the field
 1. As you type any matches will be shown below.
