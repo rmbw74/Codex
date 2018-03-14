@@ -20,7 +20,7 @@ Front End Capstone NSS Cohort 22. Application for helping organize movie collect
     databaseURL: "Your Firebase Config here>",
     projectId: "<Your Firebase Config here>",
     storageBucket: "<Your Firebase Config here>",
-    messagingSenderId: "545121410789"
+    messagingSenderId: "<Your Firebase Config here>"
 })
 app.constant("TMDB_KEY", "<Your TMBD API Key here>")
 angular.module("codex").run(function (FIREBASE_CONFIG) {
